@@ -14,8 +14,10 @@ server.use(express.static('./public'))
 
 
 
+
 const PORT = process.env.PORT || 3030;
 const client = new pg.Client(process.env.DATABASE_URL);
+
 
 
 server.set('view engine', 'ejs');
