@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="header-title">
+            <h1>Best Books!</h1>
+          </div>
+          <div id='page-title'>
+            <h2>Your Saved Books: <%= books.length%></h2>
+          </div>
+          <% books.forEach(book => { %>
+            <div class="book">
+              <img src=<%= book.image_url %> alt="book">
+              <h2>
+                <%= book.title %>
+              </h2>
+              <p><%= book.author %></p>
+              <p><%= book.description %></p>
+              <form action="/books/<%-book.id%>" method="get">
+                <button type="submit">View Details</button>
+              </form>
+            </div>
+          <%})%>
+    </header>
+</body>
+</html>
